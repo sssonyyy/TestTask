@@ -10,7 +10,7 @@
 
    Значения PostgreSQL по умолчанию уже указаны в `docker-compose.yml`, поэтому дополнительные файлы и настройки не нужны. При необходимости их можно переопределить через `.env`.
 
-API будет доступно по адресу <http://localhost:8000>, а Swagger UI — по адресу <http://localhost:8000/docs>.
+API будет доступно по адресу <http://localhost>, а Swagger UI — по адресу <http://localhost/docs>.
 
 PostgreSQL не публикует порт на хост: к нему может обращаться только API внутри Docker Compose. Данные PostgreSQL сохраняются в именованном томе `postgres_data`.
 
@@ -20,7 +20,7 @@ PostgreSQL не публикует порт на хост: к нему може�
 
 ```sh
 export DATABASE_URL='postgresql+psycopg2://postgres:password@localhost:5432/TestDB'
-uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn main:app --host 0.0.0.0 --port 80
 ```
 
 ## Данные
